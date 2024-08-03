@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+Login Page
+{% endblock %}
+
+
+{% block content %}
+
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-signin" style="color: white;">
+            {{ form.hidden_tag()}}
+            <img style="width: 100px; border-radius: 50%;" class="mb-4"
+                src="https://images-platform.99static.com//RaPGs6Rev9gVN3bC_is7gzV87K0=/937x937:1657x1657/fit-in/500x500/99designs-contests-attachments/121/121535/attachment_121535114" alt="logo">
+            <h1 class="h3 mb-3 font-weigth-normal">
+                Please Login
+            </h1>
+            <br>
+            {{ form.username.label() }}
+            {{ form.username(class="form-control", placeholder="User Name") }}
+            {{ form.password.label() }}
+            {{ form.password(class="form-control", placeholder="Password") }}
+            <br>
+            <div class="checkbox mb-3">
+                <h6>Do not have an account?</h6>
+                <a class="btn btn-sm btn-secondary" href="{{ url_for('register_page') }}">Register</a>
+            </div>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary")}}
+        </form>
+    </div>
+</body>
+{% endblock %}
